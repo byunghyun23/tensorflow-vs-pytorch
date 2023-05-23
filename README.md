@@ -8,21 +8,23 @@ Then, move the downloaded images to
 ```
 
 ## Tensorflow
-Train
+Training
 ```
 python train_tf.py
 ```
-Test
+Trained model will be placed in
+model_tf.h5
+Testing
 ```
 python test_tf.py
 ```
 
 ## PyTorch
-Train
+Training
 ```
 python train_torch.py
 ```
-Test
+Testing
 ```
 python test_torch.py
 ```
