@@ -8,21 +8,21 @@ Then, move the downloaded images to
 ```
 
 ## Tensorflow
-### Train
+Train
 ```
 python train_tf.py
 ```
-### Test
+Test
 ```
 python test_tf.py
 ```
 
 ## PyTorch
-### Train
+Train
 ```
 python train_torch.py
 ```
-### Test
+Test
 ```
 python test_torch.py
 ```
