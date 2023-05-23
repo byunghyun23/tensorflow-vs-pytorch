@@ -12,8 +12,6 @@ Training
 ```
 python train_tf.py
 ```
-Trained model will be placed in
-model_tf.h5
 Testing
 ```
 python test_tf.py
