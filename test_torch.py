@@ -73,14 +73,15 @@ class MyModel(nn.Module):
 
 @click.command()
 @click.option('--data_dir', default='data/test', help='Data path')
-@click.option('--model_name', default='model_torch', help='Model name')
-def run(data_dir, model_name):
+@click.option('--model_name', default='pytorch_model', help='Model name')
+@click.option('--class_num', default=8, help='class number')
+def run(data_dir, model_name, class_num):
     device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
     print(f'{device} is available')
 
     image_names, X_test = load_data(data_dir)
 
-    loaded_model = MyModel(38).to(device)
+    loaded_model = MyModel(class_num).to(device)
     loaded_model.load_state_dict(torch.load(model_name + '.pt'))
     loaded_model.eval()
 
@@ -94,7 +95,7 @@ def run(data_dir, model_name):
         pred = [labels[k] for k in pred]
 
     results_df = pd.DataFrame({'image_names': image_names, 'class': pred})
-    results_df.to_csv('results_torch.csv', index=False)
+    results_df.to_csv('pytorch_results.csv', index=False)
 
 
 if __name__ == '__main__':
